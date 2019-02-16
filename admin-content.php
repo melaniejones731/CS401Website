@@ -4,9 +4,9 @@ Site admin content page, composed of the templates below
 */
 
 //page header
-include("templates/header.html");
+include("Templates/header.html");
 //main content
-include("views/admin-content.html"); 
+include("Views/admin-content.html"); 
 //footer
-include("templates/footer.html")
+include("Templates/footer.html")
 ?>

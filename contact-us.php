@@ -4,11 +4,11 @@ Site contact page, composed of the templates below
 */
 
 //page header
-include("templates/header.html");
+include("Templates/header.html");
 //main content
-include("views/contact-us.html"); 
+include("Views/contact-us.html"); 
 //carousel content
-include("templates/campCarousel.html");
+include("Templates/campCarousel.html");
 //footer
-include("templates/footer.html")
+include("Templates/footer.html")
 ?>

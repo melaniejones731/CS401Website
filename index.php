@@ -6,7 +6,7 @@ Site home page, composed of the templates below
 //page header
 include("Templates/header.html");
 //main content
-include("index.html"); 
+include("Views/index.html"); 
 //carousel content
 include("Templates/campCarousel.html");
 //footer

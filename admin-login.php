@@ -4,9 +4,9 @@ Site admin login page, composed of the templates below
 */
 
 //page header
-include("templates/header.html");
+include("Templates/header.html");
 //main content
-include("views/admin-login.html"); 
+include("Views/admin-login.html"); 
 //footer
-include("templates/footer.html")
+include("Templates/footer.html")
 ?>

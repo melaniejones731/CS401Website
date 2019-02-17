@@ -8,7 +8,7 @@ include("Templates/header.php");
 //main content
 include("Views/contact-us.html"); 
 //carousel content
-include("Templates/campCarousel.html");
+include("Templates/campCarousel.php");
 //footer
 include("Templates/footer.html")
 ?>

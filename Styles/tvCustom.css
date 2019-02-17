@@ -2,25 +2,43 @@ body {
     width: 94%;
     margin: 0 auto;}
 
+#feature {margin: 1%;}
+
 #content, #carousel, #searchContainer {overflow: auto;}
 
-#nav, #footer, #feature {
-    margin: 1%;}
 
 .column1, .column2, .column3 {
     width: 31.3%;
     float: left;
     margin: 1%;}
 
-.column3 {margin-right: 0%;}
+.column1{
+    background-image: url("Images/teens-robot464x309.jpg");}
 
-.biCard1, .biCard2 {
+.column2{
+    background-image: url("Images/sports-kids591x394.jpg");}
+
+.column3 {
+    margin-right: 0%;
+    background-image: url("Images/theater-kid488x325.jpg");}
+
+.biCard1, .biCard2, .biCard3 {
     width: 48%;
     float: left;
     margin: 1%}
 
-.biCard2 {
-    float: right;}
+.biCard1 {background-image: url("Images/parent-faq629x473.jpg");}
+
+.biCard2 {background-image: url("Images/camp-provider630x417.jpg");}
+    
+.biCard3 {background-image: url("Images/about-us629x420.jpg");}
+        
+.rightCard{
+    width: 48%;
+    float: right;
+    margin: 1%;
+    background-color: #efefef;}
+
 
 .leftSidePane{
     width: 25%;
@@ -28,8 +46,7 @@ body {
     margin: 1%;
     height: 40em;
     margin-bottom: 1em;
-    background-color: #efefef;
-}
+    background-color: #efefef;}
 
 .rightAdjustedPane{
     width: 70%;
@@ -37,49 +54,62 @@ body {
     margin: 1%;
     height: 40em;
     margin-bottom: 1em;
-    background-color: #efefef;
-}
-
+    background-color: #efefef;}
 
 li{ 
-    display: inline;
-    padding: 0.53em;}
+    display: inline-block; 
+    font-family: 'Lato', 'Arial','sans-serif';
+    color:#555;
+    font-size: 20px;
+    font-weight:300;
+    text-rendering: optimizeLegibility;
+    padding: 0em 2em;
+    margin-left:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    word-spacing:4px;}
+
+li a:link, li a:visited{
+    color: #a9a9a9;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition:border-bottom .2s;
+    padding: 5px 0;}
+
+ li a:hover, li a:active{
+    border-bottom: 4px solid #ff3b3f;}
 
 .home-feature{
-    background-image: url("Images/canoe-kid1257x652.jpg");
+    background-image: url("Images/ropes-kid1291x768.jpg");
     height: 40em;
-    margin-bottom: 1em;
-    margin: 1%;
-}
+    margin-bottom: 1em;}
 
 #nav, #footer {
     background-color: #efefef;
-    padding: 0.5em 0;
-}
+    padding: 0.5em 0;}
 
  .triCard, .biCard {
     height: 20em;
-    margin-bottom: 1em;
-    background-color: #efefef;
-}
+    margin-bottom: 1em;}
 
 .card {
     height: 14em;
     margin-top: 8%;
     margin-left: 32%;
     margin-right: 32%;
-    background-color: #efefef;
-}
+    background-color: #efefef;}
+
 #feature{
     height: 32em;
     margin-bottom: 1em;
-    background-color: #efefef;
-}
+    background-color: #efefef;}
 
 .title-container{
     padding: 20px, 20px;
-    height: 5em;
-}
+    height: 5em;}
+
 h1 {
     font-family: Roboto,sans-serif;
     font-size: 250%;
@@ -87,5 +117,4 @@ h1 {
     text-align: center;
     /*padding-top:  20px;
     padding-bottom: 10px;*/
-    color: #ffffff
-    }
+    color: #ffffff}

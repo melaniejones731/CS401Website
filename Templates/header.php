@@ -7,10 +7,9 @@
     
     <body>
         <div id ="header">
-            <h1>Logo</h1>
             <div id = "nav">
                 <ul>
-                    <li><a href=index.php>Home</a></li>
+                    <li><a href=index.php>TVKids Guide</a></li>
                     <li><a href="search-camps.php">All Camps</a></li>
                     <li><a href="about-tv-kids-guide.php">About</a></li>
                     <li><a href="contact-us.php">Contact Us</a></li>

@@ -13,25 +13,25 @@ body {
     margin: 1%;}
 
 .column1{
-    background-image: url("Images/teens-robot464x309.jpg");}
+    background-image: url("images/teens-robot464x309.jpg");}
 
 .column2{
-    background-image: url("Images/sports-kids591x394.jpg");}
+    background-image: url("images/sports-kids591x394.jpg");}
 
 .column3 {
     margin-right: 0%;
-    background-image: url("Images/theater-kid488x325.jpg");}
+    background-image: url("images/theater-kid488x325.jpg");}
 
 .biCard1, .biCard2, .biCard3 {
     width: 48%;
     float: left;
     margin: 1%}
 
-.biCard1 {background-image: url("Images/parent-faq629x473.jpg");}
+.biCard1 {background-image: url("images/parent-faq629x473.jpg");}
 
-.biCard2 {background-image: url("Images/camp-provider630x417.jpg");}
+.biCard2 {background-image: url("images/camp-provider630x417.jpg");}
     
-.biCard3 {background-image: url("Images/about-us629x420.jpg");}
+.biCard3 {background-image: url("images/about-us629x420.jpg");}
         
 .rightCard{
     width: 48%;
@@ -82,7 +82,7 @@ li a:link, li a:visited{
     border-bottom: 4px solid #ff3b3f;}
 
 .home-feature{
-    background-image: url("Images/ropes-kid1291x768.jpg");
+    background-image: url("images/ropes-kid1291x768.jpg");
     height: 40em;
     margin-bottom: 1em;}
 

@@ -4,7 +4,7 @@ Site Parent FAQ page, composed of the templates below
 */
 
 //page header
-include("Templates/header.html");
+include("Templates/header.php");
 //main content
 include("Views/about-parents.html");
 ?>

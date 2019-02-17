@@ -1,5 +1,5 @@
 body {
-    width: 90%;
+    width: 94%;
     margin: 0 auto;}
 
 #content, #carousel, #searchContainer {overflow: auto;}
@@ -45,6 +45,13 @@ li{
     display: inline;
     padding: 0.53em;}
 
+.home-feature{
+    background-image: url("Images/canoe-kid1257x652.jpg");
+    height: 40em;
+    margin-bottom: 1em;
+    margin: 1%;
+}
+
 #nav, #footer {
     background-color: #efefef;
     padding: 0.5em 0;
@@ -56,8 +63,29 @@ li{
     background-color: #efefef;
 }
 
+.card {
+    height: 14em;
+    margin-top: 8%;
+    margin-left: 32%;
+    margin-right: 32%;
+    background-color: #efefef;
+}
 #feature{
     height: 32em;
     margin-bottom: 1em;
     background-color: #efefef;
 }
+
+.title-container{
+    padding: 20px, 20px;
+    height: 5em;
+}
+h1 {
+    font-family: Roboto,sans-serif;
+    font-size: 250%;
+    text-shadow: 2px 2px 3px #666666;
+    text-align: center;
+    /*padding-top:  20px;
+    padding-bottom: 10px;*/
+    color: #ffffff
+    }

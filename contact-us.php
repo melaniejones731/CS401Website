@@ -4,7 +4,7 @@ Site contact page, composed of the templates below
 */
 
 //page header
-include("Templates/header.html");
+include("Templates/header.php");
 //main content
 include("Views/contact-us.html"); 
 //carousel content

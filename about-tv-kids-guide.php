@@ -4,7 +4,7 @@ Site About Us page, composed of the templates below
 */
 
 //page header
-include("Templates/header.html");
+include("Templates/header.php");
 //main content
 include("Views/about-tv-kids-guide.html");
 ?>

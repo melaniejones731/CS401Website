@@ -11,7 +11,7 @@
         <div id ="header">
             <div id = "nav">
                 <ul>
-                    <li><a href=index.php>TVKids Guide</a></li>
+                    <li><a href=index.php><span class=eyecatcher>TVKids</span> Guide</a></li>
                     <li><a href="search-camps.php">All Camps</a></li>
                     <li><a href="about-tv-kids-guide.php">About</a></li>
                     <li><a href="contact-us.php">Contact Us</a></li>

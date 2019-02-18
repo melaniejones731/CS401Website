@@ -17,7 +17,7 @@ include("Views/about-providers.html");
         </div>
     </div>
     <div class="biCard">
-        <img src="Styles/images/parent-faq629x473.jpg" style="width:100%">
+        <img src="Styles/images/parent-faq629x420.jpg" style="width:100%">
         <div class=container>    
             <h2><a href="about-parents.php" >Parent FAQs</a></h2>
         </div>

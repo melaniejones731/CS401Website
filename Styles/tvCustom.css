@@ -2,15 +2,12 @@ body {
     width: 94%;
     margin: 0 auto;}
 
-#feature {margin: 1%;}
-
 #content, #carousel, #searchContainer {overflow: auto;}
 
 .rightCard{
     width: 48%;
     float: right;
     margin: 1%;}
-
 
 .leftSidePane{
     width: 25%;
@@ -30,13 +27,13 @@ body {
 
 li{ 
     display: inline-block; 
-    font-family: 'Indie Flower';
-    color:#B82601;
+    font-family: 'Open Sans';
+    color:#00303f;
     font-size: 20px;
     font-weight:600;
     text-rendering: optimizeLegibility;
     padding: 0em 2em;
-    margin-left:5px;
+    margin-left:2px;
     text-transform:uppercase;
     letter-spacing:1px;
     word-spacing:4px;}
@@ -60,13 +57,14 @@ li a:link, li a:visited{
 
 #nav{
     background-color: #cae4db;
-    padding: 0.5em 0;}
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 0.25em 0;}
 
 #footer{
     margin-bottom: 20em;
 }
 
- .triCard {
+.triCard {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     height: 23em;
@@ -95,9 +93,11 @@ li a:link, li a:visited{
     margin-bottom: 1em;}
 
 #feature{
-    height: 32em;
+    height: 40em;
+    margin-top: 0.5em;
     margin-bottom: 1em;
-    background-color: #efefef;}
+    padding: 1em 5em;
+    background-color: #ffffff;}
 
 .title-container{
     padding: 20px, 20px;
@@ -105,23 +105,34 @@ li a:link, li a:visited{
 
 h1 {
     font-family: 'Open Sans';
-    font-size: 250%;
-    text-shadow: 2px 2px 3px #666666;
-    text-align: center;
-    /*padding-top:  20px;
-    padding-bottom: 10px;*/
-    color: #ffffff}
+    font-size: 250%;}
+  
 
 p {
-    font-family: 'Open Sans';}
+    font-family: 'Open Sans';
+    font-size: 125%;}
 
 .emphawhite {
     color: #ffffff;
+    text-align: center;
     text-shadow: 2px 2px 3px #666666;}
 
-a {
+a:link, a:visited{
     font-family: 'Open Sans';
+    text-decoration: initial;
     color: #B82601;}
+
+a:hover, a:active{
+    color: #00303f;
+    border-bottom: 2px solid #B82601;}
+
+img.align-left{
+    float: left;
+    margin-right: 10px;}
+
+img.medium{
+    width: 154px;
+    height: 250px;}
 
 .eyecatcher {
     font-family: Indie Flower;
@@ -129,7 +140,8 @@ a {
     color: #B82601;
     font-style: normal; 
     font-variant: normal; 
-    font-weight: 400;}
+    font-weight: 400;
+    text-transform: none;}
 
 .left-footer {
     font-family: 'Open Sans';

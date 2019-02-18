@@ -2,7 +2,7 @@
         <div class="triCard">
         <img src="Styles/images/teens-robot464x309.jpg" style="width:100%">
                 <div class=container>
-                        <a href="search-camps.php"><h2>Camps for Teens</h2></a>
+                        <h2><a href="search-camps.php">Camps for Teens</h2></a>
                 </div>
         </div>
         <div class="triCard">

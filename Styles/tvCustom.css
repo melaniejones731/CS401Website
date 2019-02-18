@@ -156,3 +156,9 @@ img.medium{
         text-align: right; 
         float: right;
         margin: 1%}
+
+@media screen and (max-width: 600px) {
+    .biCard, .triCard {
+        width: 100%;
+    }
+}

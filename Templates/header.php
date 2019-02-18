@@ -3,6 +3,8 @@
     <header>
         <title>TVKids Guide - We Find Fun for Kids!</title>
         <link href="Styles/tvCustom.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Indie+Flower" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     </header>
     
     <body>

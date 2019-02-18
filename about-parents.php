@@ -10,11 +10,17 @@ include("Templates/header.php");
 include("Views/about-parents.html");
 ?>
 <div id="carousel">
-    <div class="biCard biCard3">
-        <a href="about-tv-kids-guide.php">About TVKids Guide</a>
+    <div class="biCard">
+    <img src="Styles/images/about-us629x420.jpg" style="width:100%">
+        <div class=container>
+            <h2><a href="about-tv-kids-guide.php">About TVKids Guide</a></h2>
+        </div>
     </div>
-    <div class="biCard biCard2">
-        <a href="about-providers.php">Provider FAQs</a>
+    <div class="biCard">
+        <img src="Styles/images/camp-provider630x417.jpg" style="width:100%">
+        <div class=container>
+            <h2><a href="about-providers.php">Provider FAQs</a></h2>
+        </div>
     </div>
 </div>
 <? 

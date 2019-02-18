@@ -9,7 +9,7 @@
     
     <body>
         <div id ="header">
-            <div id = "nav">
+            <nav>
                 <ul>
                     <li><a href=index.php><span class=eyecatcher>TVKids</span> Guide</a></li>
                     <li><a href="search-camps.php">All Camps</a></li>
@@ -17,5 +17,5 @@
                     <li><a href="contact-us.php">Contact Us</a></li>
                     <li><a href="admin-login.php">Login</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>

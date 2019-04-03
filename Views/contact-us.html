@@ -1,5 +1,21 @@
 <div id="content">
     <div id="feature">
         <p class="eyecatcher">Contact Us</p>
+        <form method="post" name="contact-us" action="controllers/form-to-email.php">
+            <p>
+            <label for='name'>Name: </label><br>
+            <input type="text" name="name">
+            </p>
+            <p>
+                <label for='email'>Email: </label><br>
+                <input type="text" name="email">
+            </p>
+            <p>
+                <label for='message'>Yourd message here: </label><br>
+                <input type="text" name="message">
+            </p>
+            <input type="submit" value="Send">
+
+        </form>
     </div>
 </div>

@@ -2,11 +2,17 @@
 //The Dao class contains all queries and prepared statements as well as the database connection.
 
 class Dao {
-    private $host = "localhost";
-    private $db = "TVKids";
-    private $user = "melaniejones";
-    private $pass = "password";
+    //local config
+    //private $host = "localhost";
+    //private $db = "TVKids";
+    //private $user = "melaniejones";
+    //private $pass = "password";
 
+    //heroku config
+    private $host = "us-cdbr-east-04.cleardb.com";
+    private $db = "heroku_9bd6986b3a0fe57";
+    private $user = "b934344d348a79";
+    private $pass = "0f8b4c56";
     public function getConnection () {
         return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,$this->pass);
     }

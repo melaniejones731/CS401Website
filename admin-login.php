@@ -38,7 +38,7 @@ session_start();
     </p>
     <?php
     if (isset($_SESSION["status"])) {
-        echo $_SESSION["status"];
+        echo "<p class=\"error\">{$_SESSION["status"]}</p>";
         unset($_SESSION["status"]);
       }
     ?>

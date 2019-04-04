@@ -73,6 +73,7 @@ session_start();
     <p>Search Results</p>
     <?php
     if($_SESSION["empty_search"]){
+        echo "poop";
         require_once 'Dao.php';
         $dao = new Dao();
         $camps = $dao->getAllCamps();

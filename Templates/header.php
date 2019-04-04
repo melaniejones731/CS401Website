@@ -15,7 +15,7 @@
                     <li><a href="search-camps.php">All Camps</a></li>
                     <li><a href="about-tv-kids-guide.php">About</a></li>
                     <li><a href="contact-us.php">Contact Us</a></li>
-                    <li><a href="admin-login.php">Login</a></li>
+                    <li><a href="admin-login.php">Camp Admin</a></li>
                 </ul>
             </nav>
         </div>

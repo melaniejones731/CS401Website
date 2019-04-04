@@ -41,6 +41,14 @@ h1 { font-family: 'Open Sans';
 p { font-family: 'Open Sans';
     font-size: 125%;}
     
+#username, #password, #email, #name {width: 300px;}
+
+#message {width: 600px; height: 200px}
+
+.error {
+    color: #B82601;
+    font-size: 14px; 
+}
 .eyecatcher {
     font-family: Indie Flower;
     font-size: 40px; 

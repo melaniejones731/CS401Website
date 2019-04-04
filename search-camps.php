@@ -13,10 +13,10 @@ session_start();
 <div id="searchContainer">
     <div class="leftSidePane">
         <p>Search Filters</p>
-        <form action="search-handler.php" method="POST">
+        <form action="search-handler.php" method="GET">
             <p> 
                 <label for='category'>Categories: </label><br>
-                <select multiple name="category" size="2" >
+                <select multiple name="category[ ]" size="2" >
                 <option value="academic">Academic</option>
                 <option value="art">Art</option>
                 <option value="cooking">Cooking & Health</option>
@@ -31,7 +31,7 @@ session_start();
             </p>
             <p> 
                 <label for='attributes'>Attributes: </label><br>
-                <select name="attributes" size="2" multiple="multiple">
+                <select name="attributes[ ]" size="2" multiple="multiple">
                 <option value="bacare">Before/After Care</option>
                 <option value="boysonly">Boys Only</option>
                 <option value="girls only">Girls Only</option>
@@ -42,7 +42,7 @@ session_start();
             </p>
             <p> 
                 <label for='ages'>Ages: </label><br>
-                <select name="ages" size="2" multiple="multiple">
+                <select name="ages[ ]" size="2" multiple="multiple">
                     <option value="0">0-4</option>
                     <option value="5">5-7</option>
                     <option value="8">8-11</option>
@@ -92,6 +92,7 @@ session_start();
         $dao = new Dao();
 
         //$searchString = $searchString.' category.category_name=\'' .$_SESSION['category'] . '\'';
+        //echo "poop";
         //echo $_SESSION['search_string'];
         $searchString = $_SESSION['search_string'];
         $camps = $dao->getSearchedCamps($searchString);

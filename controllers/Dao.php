@@ -9,7 +9,7 @@ class Dao {
     //private $pass = "password";
 
     //heroku config
-    private $host = "us-cdbr-east-04.cleardb.com";
+    private $host = "us-cdbr-iron-east-03.cleardb.net";
     private $db = "heroku_9bd6986b3a0fe57";
     private $user = "b934344d348a79";
     private $pass = "0f8b4c56";

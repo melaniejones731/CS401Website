@@ -71,33 +71,38 @@ session_start();
         </form>
     </div>
     <div class="rightAdjustedPane">
-    <p>Search Results</p>
+    <p class="eyecatcher">Search Results</p>
     <?php
     if($_SESSION["empty_search"]){
         require_once 'Dao.php';
         $dao = new Dao();
         $camps = $dao->getAllCamps();
-        echo "<table id='camps'>";
+        
         foreach ($camps as $camp) {
-            echo "<tr><td>{$camp['camp_name']}</td><td>{$camp['description']}</td></tr>";
+            echo "<h3><a href='{$camp['website']}' target='_blank'>{$camp['camp_name']}</a></h3>";
+            echo "<p><b>Date and Time: </b> {$camp['start_date']} to {$camp['end_date']}</p>";
+            echo "<p>{$camp['description']}</p>";
+            echo "<p><b>Cost: </b>{$camp['cost']}</p>";
+            echo '</br>';
         }
-        echo "</table>";
+        
     }
     else{
         require_once 'Dao.php';
         $dao = new Dao();
 
         //$searchString = $searchString.' category.category_name=\'' .$_SESSION['category'] . '\'';
-        echo $_SESSION['search_string'];
+        //echo $_SESSION['search_string'];
         $searchString = $_SESSION['search_string'];
         $camps = $dao->getSearchedCamps($searchString);
         if($camps->fetchColumn()>0){
-            echo "<table id='camps'>";
             foreach ($camps as $camp) {
-                echo "<tr><td>{$camp['camp_name']}</td><td>{$camp['description']}</td></tr>";
-            }
-            echo "</table>";
-            //echo $_SESSION['category'];
+                echo "<h3><a href='{$camp['website']}' target='_blank'>{$camp['camp_name']}</a></h3>";
+                echo "<p><b>Date and Time: </b>{$camp['start_date']} to {$camp['end_date']}</p>";
+                echo "<p>{$camp['description']}</p>";
+                echo "<p><b>Cost: </b>{$camp['cost']}</p>";
+                echo '</br>';
+              }
         }
         else{
             echo "<p class=\"error\">Sorry, there are no camps that match your search. Please try again!</p>";

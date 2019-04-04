@@ -14,7 +14,7 @@ else{
     $list = '';
     $options = $_GET['category'];
     $append=str_replace("\\","",$options);
-    $list= ' category.category_name IN (\'' .$_SESSION["category"]. '\',\'STEM\')';
+    $list= ' category.category_name IN (\'' .$_SESSION["category"]. '\')';
     //$list = $list .' category.category_name in (\''.$append.'\')';
         
     

@@ -15,17 +15,27 @@ if (isset($_SESSION["access_granted"]) && !$_SESSION["access_granted"] ||
 }
 ?>
 
-<a href="logout-handler.php">Logout</a>
+<a class=rightfloatred href="logout-handler.php">Logout</a>
 
 <?php
 require_once 'Dao.php';
 $dao = new Dao();
 $camps = $dao->getSessionsForAdmin($_SESSION["email_preset"]);
-echo "<table id='camps'>";
+
 foreach ($camps as $camp) {
-  echo "<tr><td>{$camp['camp_name']}</td><td>{$camp['description']}</td></tr>";
+  echo "<h3>{$camp['camp_name']}</h3>";
+  echo "<p>Date and Time: {$camp['start_date']} to {$camp['end_date']}</p>";
+  echo "<p>{$camp['description']}</p>";
+  $checked = "";
+  if ($camp['isActive'] = 1){
+    $checked = "Make This Session Inactive";
+  }
+  else {
+    $checked = "Make This Session Active";
+  }
+  echo "<p><a href=\"management-handler.php?id=\"{$camp['session_id']}\"><b>$checked</b></a></p>";
+  echo "</br>";
 }
-echo "</table>";
 
 //footer
 include("Templates/footer.html")

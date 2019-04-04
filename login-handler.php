@@ -2,7 +2,7 @@
 // login_handler.php
 session_start();
 
-require_once 'Controllers/Dao.php';
+require_once 'Dao.php';
 $dao = new Dao();
 $count = $dao->userIsValid($_POST["username"], $_POST["password"]);
 

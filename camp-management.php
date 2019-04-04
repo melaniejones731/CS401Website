@@ -18,7 +18,7 @@ if (isset($_SESSION["access_granted"]) && !$_SESSION["access_granted"] ||
 <a href="logout-handler.php">Logout</a>
 
 <?php
-require_once 'Controllers/Dao.php';
+require_once 'Dao.php';
 $dao = new Dao();
 $camps = $dao->getSessionsForAdmin($_SESSION["email_preset"]);
 echo "<table id='camps'>";

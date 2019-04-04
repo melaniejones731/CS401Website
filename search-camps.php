@@ -75,7 +75,7 @@ session_start();
     <p>Search Results</p>
     <?php
     if($_SESSION["empty_search"]){
-        require_once 'Controllers/Dao.php';
+        require_once 'Dao.php';
         $dao = new Dao();
         $camps = $dao->getAllCamps();
         echo "<table id='camps'>";
@@ -85,7 +85,7 @@ session_start();
         echo "</table>";
     }
     else{
-    require_once 'Controllers/Dao.php';
+    require_once 'Dao.php';
     $dao = new Dao();
     $searchString = '';
     if(!empty($_POST["category"])){

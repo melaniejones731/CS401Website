@@ -36,6 +36,7 @@ session_start();
                 <option value="boysonly">Boys Only</option>
                 <option value="girls only">Girls Only</option>
                 <option value="gifted">Gifted</option>
+                <option value="scholarship available">Scholarship Available</option>
                 <option value="special">Special Needs</option>
             </select>
             </p>
@@ -65,7 +66,7 @@ session_start();
                 <label for='dateend'>Date Range End: </label><br>
                 <input type="date" name="dateend">
             </p>
-            <input type="button" value="Clear">
+            <!--input type="button" value="Clear"-->
             <input type="submit" value="Search" id=search>
         </form>
     </div>
@@ -85,7 +86,10 @@ session_start();
     else{
         require_once 'Dao.php';
         $dao = new Dao();
-        $searchString = 'category.category_name=\'' .$_SESSION['category'] . '\'';
+
+        //$searchString = $searchString.' category.category_name=\'' .$_SESSION['category'] . '\'';
+        echo $_SESSION['search_string'];
+        $searchString = $_SESSION['search_string'];
         $camps = $dao->getSearchedCamps($searchString);
         if($camps->fetchColumn()>0){
             echo "<table id='camps'>";
@@ -93,9 +97,11 @@ session_start();
                 echo "<tr><td>{$camp['camp_name']}</td><td>{$camp['description']}</td></tr>";
             }
             echo "</table>";
+            //echo $_SESSION['category'];
         }
         else{
             echo "<p class=\"error\">Sorry, there are no camps that match your search. Please try again!</p>";
+            //echo $_SESSION['category'];
         }
     }
     ?>

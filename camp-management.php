@@ -27,13 +27,17 @@ foreach ($camps as $camp) {
   echo "<p>Date and Time: {$camp['start_date']} to {$camp['end_date']}</p>";
   echo "<p>{$camp['description']}</p>";
   $checked = "";
-  if ($camp['isActive'] = 1){
-    $checked = "Make This Session Inactive";
-  }
-  else {
-    $checked = "Make This Session Active";
-  }
-  echo "<p><a href=\"management-handler.php?id=\"{$camp['session_id']}\"><b>$checked</b></a></p>";
+
+switch ($camp['isActive']) {
+    case 1:
+        $checked = "Make This Session Inactive";
+        break;
+    case 0:
+        $checked = "Make This Session Active";
+        break;
+}
+
+  echo "<p><a href=\"management-handler.php?id={$camp['session_id']}\"><b>$checked</b></a></p>";
   echo "</br>";
 }
 

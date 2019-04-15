@@ -26,6 +26,8 @@ foreach ($camps as $camp) {
   echo "<h3>{$camp['camp_name']}</h3>";
   echo "<p>Date and Time: {$camp['start_date']} to {$camp['end_date']}</p>";
   echo "<p>{$camp['description']}</p>";
+  echo "<p>{$camp['isActive']}</p>";
+  echo "<p>{$camp['session_id']}</p>";
   $checked = "";
 
 switch ($camp['isActive']) {

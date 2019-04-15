@@ -11,19 +11,19 @@ if ((isset($_GET['id'])))
     require_once 'Dao.php';
     $dao = new Dao();
     $active = $dao->getSessionStatus($sessionID);
+
     
-    switch ($camp['isActive']) {
-        case 1:
-        $dao = new Dao();
-        $dao->setSessionStatus($sessionID, 0);
-        header("Location: camp-management.php");
-            break;
-        case 0:
+    if($active['isActive']== 0){
         $dao = new Dao();
         $dao->setSessionStatus($sessionID, 1);
         header("Location: camp-management.php");
-            break;
-    }   
+    }
+    else{
+        $dao = new Dao();
+        $dao->setSessionStatus($sessionID, 0);
+        header("Location: camp-management.php");
+    }
+    
 }
 else {
 echo '<p class ="error">This page was accessed in error. <a href="camp-management.php">Return to Camp Management</a></p>';

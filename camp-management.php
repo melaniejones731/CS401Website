@@ -39,7 +39,7 @@ switch ($camp['isActive']) {
         break;
 }
 
-  echo "<p><a href=\"management-handler.php?id={$camp['session_id']}\"><b>$checked</b></a></p>";
+  echo "<p><a href=\"management-handler.php?id={$camp['session_id']}&&active={$camp['isActive']}\"><b>$checked</b></a></p>";
   echo "</br>";
 }
 

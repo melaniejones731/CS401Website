@@ -31,7 +31,7 @@ session_start();
             </p>
             <p> 
                 <label for='attributes'>Attributes: </label><br>
-                <select name="attributes[ ]" size="2" multiple="multiple">
+                <select multiple name="attributes[ ]" size="2">
                 <option value="bacare">Before/After Care</option>
                 <option value="boysonly">Boys Only</option>
                 <option value="girls only">Girls Only</option>
@@ -42,7 +42,7 @@ session_start();
             </p>
             <p> 
                 <label for='ages'>Ages: </label><br>
-                <select name="ages[ ]" size="2" multiple="multiple">
+                <select multiple name="ages[ ]" size="2">
                     <option value="0">0-4</option>
                     <option value="5">5-7</option>
                     <option value="8">8-11</option>
@@ -51,7 +51,7 @@ session_start();
             </p>
             <p> 
                 <label for='time'>Time of Day: </label><br>
-                <select name="time" size="2" multiple="multiple">
+                <select multiple name="time" size="2">
                     <option value="AM">AM</option>
                     <option value="PM">PM</option>
                     <option value="full">Full Day</option>
@@ -90,10 +90,8 @@ session_start();
     else{
         require_once 'Dao.php';
         $dao = new Dao();
-
-        //$searchString = $searchString.' category.category_name=\'' .$_SESSION['category'] . '\'';
-        //echo "poop";
-        //echo $_SESSION['search_string'];
+        
+        echo $_SESSION['search_string'];
         $searchString = $_SESSION['search_string'];
         $camps = $dao->getSearchedCamps($searchString);
         if($camps->fetchColumn()>0){

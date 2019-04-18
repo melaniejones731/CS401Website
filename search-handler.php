@@ -9,26 +9,55 @@ if(empty($_GET["category"]) && empty($_GET["attributes"]) && empty($_GET["ages"]
 else{
     $_SESSION["empty_search"] = false;
     $_SESSION["category"] = $_GET['category'];
-    $_SESSION["age"] = $_GET['age'];
+    $_SESSION["age"] = $_GET['ages'];
     
     $_SESSION["search_string"] = '';
     $list = '';
-    foreach ($_GET['category'] as $cat){
-        $list = $list . "'".$cat . "', ";
+    if (!empty($_GET["category"])){
+        foreach ($_GET['category'] as $cat){
+            $list = $list . "'".$cat . "', ";
+        }
+        $list = rtrim($list, ", ");
+        $list= ' category.category_name IN ('.$list.') AND';
     }
-    $list = rtrim($list, ", ");
-    $list= ' category.category_name IN ('.$list.')';
-    
-    //$ages = '';
-    //foreach($_GET['age'] as $age){
-      //  $ages = $ages."'".$age."', ";
-    //}
-    //$ages = rtrim($ages, ", ");
-    //$list=$list.' AND age.age_name IN('.$ages.')';
-    
-        
+    if(!empty($_GET["ages"])){
+        $ages = '';
+        foreach($_GET['ages'] as $age){
+            if($age==0){
+                $ages = $ages . "'0-4'" . ", ";
+            }
+            if($age==5){
+                $ages = $ages . "'5-7'" . ", ";
+            }
+            if($age==8){
+                $ages = $ages . "'8-11'" . ", ";
+            }
+            if($age==12){
+                $ages = $ages . "'12+'" . ", ";
+            }
+        }
+        $ages = rtrim($ages, ", ");
+        $list= $list . ' age.age_name IN ('.$ages.') AND';
+    }
+    if (!empty($_GET["attributes"])){
+        $attrs = '';
+        foreach ($_GET['attributes'] as $attr){
+            $attrs = $attrs . "'".$attr . "', ";
+        }
+        $attrs = rtrim($attrs, ", ");
+        $list=  $list . ' attribute.attribute_name IN ('.$attrs.') AND';
+    }
+    if (!empty($_GET["time"])){
+        $times = '';
+        foreach ($_GET['time'] as $time){
+            $times = $times . "'".$time . "', ";
+        }
+        $times = rtrim($times, ", ");
+        $list=  $list . ' attribute.attribute_name IN ('.$times.') AND';
+    }
 
-    //rtrim($list, "or");
+    $list = rtrim($list, "AND");
+    
     $_SESSION["search_string"] = $list; 
     header("Location:search-camps.php"); 
 }

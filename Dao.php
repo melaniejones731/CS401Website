@@ -3,16 +3,16 @@
 
 class Dao {
     //local config
-    //private $host = "localhost";
-    //private $db = "TVKids";
-    //private $user = "melaniejones";
-    //private $pass = "password";
+    private $host = "localhost";
+    private $db = "TVKids";
+    private $user = "melaniejones";
+    private $pass = "password";
 
     //heroku config
-    private $host = "us-cdbr-iron-east-03.cleardb.net";
-    private $db = "heroku_9bd6986b3a0fe57";
-    private $user = "b934344d348a79";
-    private $pass = "0f8b4c56";
+    //private $host = "us-cdbr-iron-east-03.cleardb.net";
+    //private $db = "heroku_9bd6986b3a0fe57";
+    //private $user = "b934344d348a79";
+    //private $pass = "0f8b4c56";
     
     public function getConnection () {
         return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,$this->pass);

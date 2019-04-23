@@ -23,14 +23,14 @@ $dao = new Dao();
 $camps = $dao->getSessionsForAdmin($_SESSION["email_preset"]);
 
 foreach ($camps as $camp) {
-  echo "<h3>{$camp['camp_name']}</h3>";
-  echo "<p>Date and Time: {$camp['start_date']} to {$camp['end_date']}</p>";
-  echo "<p>{$camp['description']}</p>";
-  echo "<p>For Debugging/Verification Active Status: {$camp['isActive']}</p>";
-  echo "<p>For Debugging/Verification Session ID: {$camp['session_id']}</p>";
+  echo "<h3>{$camp->camp_name}</h3>";
+  echo "<p>Date and Time: {$camp->start_date} to {$camp->end_date}</p>";
+  echo "<p>{$camp->description}</p>";
+  echo "<p>For Debugging/Verification Active Status: {$camp->isActive}</p>";
+  echo "<p>For Debugging/Verification Session ID: {$camp->session_id}</p>";
   $checked = "";
 
-switch ($camp['isActive']) {
+switch ($camp->isActive) {
     case 1:
         $checked = "Make This Session Inactive";
         break;
@@ -39,7 +39,7 @@ switch ($camp['isActive']) {
         break;
 }
 
-  echo "<p><a href=\"controllers/management-handler.php?id={$camp['session_id']}&&active={$camp['isActive']}\"><b>$checked</b></a></p>";
+  echo "<p><a href=\"controllers/management-handler.php?id={$camp->session_id}&&active={$camp->isActive}\"><b>$checked</b></a></p>";
   echo "</br>";
 }
 

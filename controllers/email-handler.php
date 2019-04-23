@@ -1,7 +1,7 @@
 <?php
 /*
 handler for processing the contact us form as email.
-many thanks to this post: http://form.guide/email-form/php-form-to-email.html 
+SOURCE: http://form.guide/email-form/php-form-to-email.html 
 */
 session_start();
 
@@ -34,26 +34,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $problem=true;
         $name_status = "Please enter your name";
         $_SESSION["name_status"] = $name_status;
-        header("Location:contact-us.php");
+        header("Location: ../contact-us.php");
     }
 
     if(empty($_POST['email'])){
         $problem=true;
         $email_status = "Please enter your email";
         $_SESSION["email_status"] = $email_status;
-        header("Location:contact-us.php");
+        header("Location:  ../contact-us.php");
     }
     if(empty($_POST['message'])){
         $problem=true;
         $message_status = "Please enter a message";
         $_SESSION["message_status"] = $message_status;
-        header("Location:contact-us.php");
+        header("Location:  ../contact-us.php");
     }
     if(IsInjected($visitor_email)){
         $problem=true;
         $email_status =  "Ooops! This email appears to be invalid - please check the email you entered and try again";
         $_SESSION["message_status"] = $message_status;
-        header("Location:contact-us.php");
+        header("Location: ../contact-us.php");
         exit;
     }
     //if(longMessage($message)){
@@ -77,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $headers = "From: $email_from \r\n";
         $headers .= "Reply-To: $visitor_email \r\n";
         mail($to,$email_subject,$email_body,$headers);
-        header("Location:index.php");
+        header("Location: ../index.php");
         
     }    
 }

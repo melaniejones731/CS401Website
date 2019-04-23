@@ -1,5 +1,5 @@
 <?php
-// login_handler.php
+// login_handler.php sets session variables when user logs in
 session_start();
 
 require_once 'Dao.php';
@@ -32,31 +32,26 @@ if($hashes->fetchColumn()>0){
    
 }
 
-//$hash = implode ($hash);
-
-//$hash = '$2y$10$dG7/tRiEYI22tF8beJM64uri6guQp6fxKGt.JUQuKz8koBstB3ZvW';
-
-
 //validate the data
 
 if(empty($_POST["username"])){
   $status = "Please enter a valid email.";
   $_SESSION["status"] = $status;
   $_SESSION["access_granted"] = false;
-  header("Location:admin-login.php");
+  header("Location: ../admin-login.php");
 }
 else if(empty($_POST["password"])){
   $status = "Please enter a valid password.";
   $_SESSION["status"] = $status;
   $_SESSION["email_preset"] = $user;
   $_SESSION["access_granted"] = false;
-  header("Location:admin-login.php");
+  header("Location:../admin-login.php");
 }
 //success!
 else if ($hash = $password) {
       $_SESSION["access_granted"] = true;
       $_SESSION["email_preset"] = $user;
-      header("Location:camp-management.php");
+      header("Location: ../camp-management.php");
 } 
 //hmmm...maybe a bad email or password?
 else {
@@ -64,6 +59,6 @@ else {
   $_SESSION["status"] = $status;
   $_SESSION["email_preset"] = $user;
   $_SESSION["access_granted"] = false;
-  header("Location:admin-login.php");
+  header("Location: ../admin-login.php");
 }
 ?>

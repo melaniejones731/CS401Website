@@ -28,7 +28,7 @@ echo $_SESSION["hash"];
     <div id="feature">
     <p class = "eyecatcher">Camp Administrator Login</p>
 
-    <form action="login-handler.php" method="POST">
+    <form action="controllers/login-handler.php" method="POST">
       <p>
         <label for="username">Email: </label>
         <input type="text" name="username" id="username" value="<?php echo $email; ?>"/>

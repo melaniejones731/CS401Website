@@ -58,14 +58,14 @@ session_start();
                     <option value="overnight">Overnight</option>
                 </select>  
             </p>
-            <!-- <p> 
+            <p> 
                 <label for='datestart'>Date Range Start: </label><br>
                 <input type="date" name="datestart">
             </p>
             <p> 
                 <label for='dateend'>Date Range End: </label><br>
                 <input type="date" name="dateend">
-            </p> -->
+            </p>
             <!--input type="button" value="Clear"-->
             <input type="submit" value="Search" id=search>
         </form>
@@ -96,6 +96,8 @@ session_start();
         $camps = $dao->getSearchedCamps($searchString);
         if($camps->fetchColumn()>0){
             foreach ($camps as $camp) {
+                $startDate = new DateTime($camp['start_date']);
+                $endDate = new DateTime($camp['end_date']);
                 echo "<h3><a href='{$camp['website']}' target='_blank'>{$camp['camp_name']}</a></h3>";
                 echo "<p><b>Date and Time: </b>{$camp['start_date']} to {$camp['end_date']}</p>";
                 echo "<p>{$camp['description']}</p>";

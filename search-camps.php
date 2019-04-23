@@ -60,11 +60,11 @@ session_start();
             </p>
             <p> 
                 <label for='datestart'>Date Range Start: </label><br>
-                <input type="date" name="datestart">
+                <input type="date" name="datestart" id="datestart">
             </p>
             <p> 
                 <label for='dateend'>Date Range End: </label><br>
-                <input type="date" name="dateend">
+                <input type="date" name="dateend" id="dateend">
             </p>
             <!--input type="button" value="Clear"-->
             <input type="submit" value="Search" id=search>
@@ -79,8 +79,14 @@ session_start();
         $camps = $dao->getAllCamps();
         
         foreach ($camps as $camp) {
+            $startymd = $camp['start_date'];
+                $timestamp = strtotime($startymd);
+                $startmdy = date("m-d-Y", $timestamp);
+                $endymd = $camp['end_date'];
+                $timestamp = strtotime($endymd);
+                $endmdy = date("m-d-Y", $timestamp);
             echo "<h3><a href='{$camp['website']}' target='_blank'>{$camp['camp_name']}</a></h3>";
-            echo "<p><b>Date and Time: </b> {$camp['start_date']} to {$camp['end_date']}</p>";
+            echo "<p><b>Date and Time: </b> {$startmdy} to {$endmdy}</p>";
             echo "<p>{$camp['description']}</p>";
             echo "<p><b>Cost: </b>{$camp['cost']}</p>";
             echo '</br>';
@@ -92,10 +98,17 @@ session_start();
         $dao = new Dao();
         $searchString = $_SESSION['search_string'];
         $camps = $dao->getSearchedCamps($searchString);
-        if($camps->fetchColumn()>0){
+        if($camps){
             foreach ($camps as $camp) {
+                $startymd = $camp['start_date'];
+                $timestamp = strtotime($startymd);
+                $startmdy = date("m-d-Y", $timestamp);
+                $endymd = $camp['end_date'];
+                $timestamp = strtotime($endymd);
+                $endmdy = date("m-d-Y", $timestamp);
+               
                 echo "<h3><a href='{$camp['website']}' target='_blank'>{$camp['camp_name']}</a></h3>";
-                echo "<p><b>Date and Time: </b>{$camp['start_date']} to {$camp['end_date']}</p>";
+                echo "<p><b>Date and Time: </b>{$startmdy} to {$endmdy}</p>";
                 echo "<p>{$camp['description']}</p>";
                 echo "<p><b>Cost: </b>{$camp['cost']}</p>";
                 echo '</br>';

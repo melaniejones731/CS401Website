@@ -12,11 +12,11 @@ session_start();
 
 <div id="searchContainer">
     <div class="leftSidePane">
-        <p>Search Filters</p>
+    
         <form action="search-handler.php" method="GET">
             <p> 
                 <label for='category'>Categories: </label><br>
-                <select multiple name="category[ ]" size="2" >
+                <select multiple name="category[ ]" size="3" >
                 <option value="academic">Academic</option>
                 <option value="art">Art</option>
                 <option value="cooking">Cooking & Health</option>
@@ -31,18 +31,18 @@ session_start();
             </p>
             <p> 
                 <label for='attributes'>Attributes: </label><br>
-                <select multiple name="attributes[ ]" size="2">
-                <option value="bacare">Before/After Care</option>
-                <option value="boysonly">Boys Only</option>
-                <option value="girls only">Girls Only</option>
-                <option value="gifted">Gifted</option>
+                <select multiple name="attributes[ ]" size="3" >
+                <option value="Before/After Care">Before/After Care</option>
+                <option value="Boys Only">Boys Only</option>
+                <option value="Girls Only">Girls Only</option>
+                <option value="Gifted">Gifted</option>
                 <option value="scholarship available">Scholarship Available</option>
-                <option value="special">Special Needs</option>
+                <option value="special needs">Special Needs</option>
             </select>
             </p>
             <p> 
                 <label for='ages'>Ages: </label><br>
-                <select multiple name="ages[ ]" size="2">
+                <select multiple name="ages[ ]" size="3">
                     <option value="0">0-4</option>
                     <option value="5">5-7</option>
                     <option value="8">8-11</option>
@@ -51,21 +51,21 @@ session_start();
             </p>
             <p> 
                 <label for='time'>Time of Day: </label><br>
-                <select multiple name="time" size="2">
+                <select multiple name="time[ ]" size="2">
                     <option value="AM">AM</option>
                     <option value="PM">PM</option>
-                    <option value="full">Full Day</option>
+                    <option value="full day">Full Day</option>
                     <option value="overnight">Overnight</option>
                 </select>  
             </p>
-            <p> 
+            <!-- <p> 
                 <label for='datestart'>Date Range Start: </label><br>
                 <input type="date" name="datestart">
             </p>
             <p> 
                 <label for='dateend'>Date Range End: </label><br>
                 <input type="date" name="dateend">
-            </p>
+            </p> -->
             <!--input type="button" value="Clear"-->
             <input type="submit" value="Search" id=search>
         </form>

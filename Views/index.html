@@ -5,6 +5,32 @@
         <div class="card rightCard">
             <h1 class="emphawhite">Summer Fun, Simplified!</h1>
             <p><span class="emphawhite">Search Summer Camps Trusted by Treasure Valley Parents!</span></p>
+            <form action="search-handler.php" method="GET">
+            <p> 
+                <label for='category' class="emphawhite">Categories: </label><br>
+                <select name="category[ ]">
+                <option value="academic">Academic</option>
+                <option value="art">Art</option>
+                <option value="cooking">Cooking & Health</option>
+                <option value="dance">Dance</option>
+                <option value="imaginative play">Imaginative Play</option>
+                <option value="music">Music</option>
+                <option value="nature">Nature</option>
+                <option value="sports">Sports & Aquatics</option>
+                <option value="stem">STEM</option>
+                <option value="theater">Theater</option>
+            </select>  
+            </p>
+            <p> 
+                <label for='ages' class="emphawhite">Ages: </label><br>
+                <select name="ages[ ]" >
+                    <option value="0">0-4</option>
+                    <option value="5">5-7</option>
+                    <option value="8">8-11</option>
+                    <option value="12">12+</option>
+                </select>  
+            </p>
+            <input type="submit" class="btn1" value="Search Camps Now!" id=searchmain>
         </div>
     </div>
 </div>

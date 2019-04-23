@@ -11,7 +11,7 @@ if ((isset($_GET['id'])))
 {
     $sessionID =$_GET['id'];
     $sessionActive = $_GET['active'];
-    require_once 'controllers/Dao.php';
+    require_once 'Dao.php';
     $dao = new Dao();
     $active = $dao->getSessionStatus($sessionID);
 

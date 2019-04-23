@@ -98,7 +98,7 @@ session_start();
         $dao = new Dao();
         $searchString = $_SESSION['search_string'];
         $camps = $dao->getSearchedCamps($searchString);
-        if($camps){
+        $count= 0;
             foreach ($camps as $camp) {
                 $startymd = $camp['start_date'];
                 $timestamp = strtotime($startymd);
@@ -112,11 +112,10 @@ session_start();
                 echo "<p>{$camp['description']}</p>";
                 echo "<p><b>Cost: </b>{$camp['cost']}</p>";
                 echo '</br>';
+                $count = $count + 1;
               }
-        }
-        else{
+        if($count < 1) {
             echo "<p class=\"error\">Sorry, there are no camps that match your search. Please try again!</p>";
-            //echo $_SESSION['category'];
         }
     }
     ?>

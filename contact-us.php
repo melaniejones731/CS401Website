@@ -25,7 +25,7 @@ $message = "";
 <div id="content">
     <div id="feature">
         <p class="eyecatcher">Contact Us</p>
-        <form action="email-handler.php" method="POST">
+        <form action="controllers/email-handler.php" method="POST">
             <p>
             <label for='name'>Name: </label><br>
             <input type="text" id="name" name="name" value = "<?php echo $name; ?>"/>

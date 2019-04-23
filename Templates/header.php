@@ -1,3 +1,4 @@
+<!--site header and any needed includes-->
 <!DOCTYPE html>
 <html>
     <header>
@@ -5,9 +6,7 @@
         <link href="Styles/tvCustom.css" type="text/css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Indie+Flower" />
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-        <link rel="stylesheet" href="Styles/fm.selectator.jquery.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="Scripts/fm.selectator.jquery.js"></script>
         <script src="Scripts/tvCustom.js"></script>
 
     </header>

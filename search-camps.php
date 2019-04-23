@@ -13,7 +13,7 @@ session_start();
 <div id="searchContainer">
     <div class="leftSidePane">
     
-        <form action="search-handler.php" method="GET">
+        <form action="controllers/search-handler.php" method="GET">
             <p> 
                 <label for='category'>Categories: </label><br>
                 <select multiple name="category[ ]" size="3" id="mainCat" >
@@ -74,7 +74,7 @@ session_start();
     <p class="eyecatcher">Search Results</p>
     <?php
     if($_SESSION["empty_search"]){
-        require_once 'Dao.php';
+        require_once 'controllers/Dao.php';
         $dao = new Dao();
         $camps = $dao->getAllCamps();
         
@@ -88,10 +88,8 @@ session_start();
         
     }
     else{
-        require_once 'Dao.php';
+        require_once 'controllers/Dao.php';
         $dao = new Dao();
-        
-        echo $_SESSION['search_string'];
         $searchString = $_SESSION['search_string'];
         $camps = $dao->getSearchedCamps($searchString);
         if($camps->fetchColumn()>0){

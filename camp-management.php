@@ -15,10 +15,10 @@ if (isset($_SESSION["access_granted"]) && !$_SESSION["access_granted"] ||
 }
 ?>
 
-<a class=rightfloatred href="logout-handler.php">Logout</a>
+<a class=rightfloatred href="controllers/logout-handler.php">Logout</a>
 
 <?php
-require_once 'Dao.php';
+require_once 'controllers/Dao.php';
 $dao = new Dao();
 $camps = $dao->getSessionsForAdmin($_SESSION["email_preset"]);
 
@@ -39,7 +39,7 @@ switch ($camp['isActive']) {
         break;
 }
 
-  echo "<p><a href=\"management-handler.php?id={$camp['session_id']}&&active={$camp['isActive']}\"><b>$checked</b></a></p>";
+  echo "<p><a href=\"controllers/management-handler.php?id={$camp['session_id']}&&active={$camp['isActive']}\"><b>$checked</b></a></p>";
   echo "</br>";
 }
 

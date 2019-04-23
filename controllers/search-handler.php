@@ -1,10 +1,10 @@
 <?php
-// search_handler
+// search_handler handles all camp searches throughout the site, regardless of where they originate from
 session_start();
 
 if(empty($_GET["category"]) && empty($_GET["attributes"]) && empty($_GET["ages"]) && empty($_GET["time"]) && empty($_GET["datestart"]) && empty($_GET["dateend"])){
     $_SESSION["empty_search"] = true;
-    header("Location:search-camps.php");
+    header("Location: ../search-camps.php");
 }
 else{
     $_SESSION["empty_search"] = false;
@@ -68,6 +68,6 @@ else{
     $list = rtrim($list, " AND");
     
     $_SESSION["search_string"] = $list; 
-    header("Location:search-camps.php"); 
+    header("Location: ../search-camps.php"); 
 }
 ?>

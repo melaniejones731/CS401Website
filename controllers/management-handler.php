@@ -1,6 +1,7 @@
 <?php
 /*
 handler for processing changes to camp status. 
+checks if user is valid, processes request
 */
 session_start();
 //retrieve values from the submitted request
@@ -10,7 +11,7 @@ if ((isset($_GET['id'])))
 {
     $sessionID =$_GET['id'];
     $sessionActive = $_GET['active'];
-    require_once 'Dao.php';
+    require_once 'controllers/Dao.php';
     $dao = new Dao();
     $active = $dao->getSessionStatus($sessionID);
 
@@ -21,14 +22,14 @@ if ((isset($_GET['id'])))
         $dao->setSessionStatus($sessionID, 1);
         unset($_SESSION['id']);
         unset($_SESSION['active']);
-        header("Location: camp-management.php");
+        header("Location: ../camp-management.php");
     }
     else if($_GET['active']==1){
         $dao = new Dao();
         $dao->setSessionStatus($sessionID, 0);
         unset($_SESSION['id']);
         unset($_SESSION['active']);
-        header("Location: camp-management.php");
+        header("Location: ../camp-management.php");
     }
     
 }

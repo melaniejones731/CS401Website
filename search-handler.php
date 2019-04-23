@@ -56,6 +56,14 @@ else{
         $times = rtrim($times, ", ");
         $list=  $list . ' attribute.attribute_name IN ('.$times.') AND';
     }
+    if (!empty($_GET["datestart"])){
+        $datestart = $_GET["datestart"];
+        $list=  $list . ' session.end_date >= \''.$datestart.'\' AND';
+    }
+    if (!empty($_GET["dateend"])){
+        $dateend = $_GET["dateend"];
+        $list=  $list . ' session.start_date <= \''.$dateend.'\' AND';
+    }
 
     $list = rtrim($list, " AND");
     

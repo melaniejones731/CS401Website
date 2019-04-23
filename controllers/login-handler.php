@@ -21,16 +21,8 @@ function sanitized($input) {
 $dao = new Dao();
 $user = sanitized($_POST["username"]);
 $password = sanitized($_POST["password"]);
-$hashes = $dao->getUserPassword($user);
-$hash = '';
+$hash = $dao->getUserPassword($user);
 
-if($hashes->fetchColumn()>0){
-  
-  foreach ($hashes as $hash) {
-      $hash = $hashes['password'];
-    }
-   
-}
 
 //validate the data
 
@@ -45,10 +37,10 @@ else if(empty($_POST["password"])){
   $_SESSION["status"] = $status;
   $_SESSION["email_preset"] = $user;
   $_SESSION["access_granted"] = false;
-  header("Location:../admin-login.php");
+  header("Location: ../admin-login.php");
 }
 //success!
-else if ($hash = $password) {
+else if (password_verify($password, $hash)) {
       $_SESSION["access_granted"] = true;
       $_SESSION["email_preset"] = $user;
       header("Location: ../camp-management.php");
@@ -59,6 +51,7 @@ else {
   $_SESSION["status"] = $status;
   $_SESSION["email_preset"] = $user;
   $_SESSION["access_granted"] = false;
+  $_SESSION["hash"] = $hash;
   header("Location: ../admin-login.php");
 }
 ?>

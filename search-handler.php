@@ -10,6 +10,7 @@ else{
     $_SESSION["empty_search"] = false;
     $_SESSION["category"] = $_GET['category'];
     $_SESSION["age"] = $_GET['ages'];
+    $_SESSION["attributes"] = $_GET['attributes'];
     
     $_SESSION["search_string"] = '';
     $list = '';
@@ -41,7 +42,7 @@ else{
     }
     if (!empty($_GET["attributes"])){
         $attrs = '';
-        foreach ($_GET['attributes'] as $attr){
+        foreach ($_GET["attributes"] as $attr){
             $attrs = $attrs . "'".$attr . "', ";
         }
         $attrs = rtrim($attrs, ", ");
@@ -56,7 +57,7 @@ else{
         $list=  $list . ' attribute.attribute_name IN ('.$times.') AND';
     }
 
-    $list = rtrim($list, "AND");
+    $list = rtrim($list, " AND");
     
     $_SESSION["search_string"] = $list; 
     header("Location:search-camps.php"); 

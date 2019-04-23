@@ -4,14 +4,27 @@ handler for processing the contact us form as email.
 many thanks to this post: http://form.guide/email-form/php-form-to-email.html 
 */
 session_start();
-//retrieve values from the submitted form
-$name = $_POST['name'];
-$visitor_email = $_POST['email'];
-$message = $_POST['message'];
 
-$_SESSION["name_preset"] = $_POST['name'];
-$_SESSION["email_preset"] = $_POST['email'];
-$_SESSION["message_preset"] = $_POST['message'];
+function sanitized($input) {
+ 
+    $search = array(
+      '@<script[^>]*?>.*?</script>@si',   // Strip out javascript
+      '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
+      '@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
+      '@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments
+    );
+   
+      $output = preg_replace($search, '', $input);
+      return $output;
+    }
+//retrieve values from the submitted form
+$name = sanitized($_POST['name']);
+$visitor_email = sanitized($_POST['email']);
+$message = sanitized($_POST['message']);
+
+$_SESSION["name_preset"] = $name;
+$_SESSION["email_preset"] = $visitor_email;
+$_SESSION["message_preset"] = $message;
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){

@@ -16,7 +16,7 @@ session_start();
         <form action="search-handler.php" method="GET">
             <p> 
                 <label for='category'>Categories: </label><br>
-                <select multiple name="category[ ]" size="3" >
+                <select multiple name="category[ ]" size="3" id="mainCat" >
                 <option value="academic">Academic</option>
                 <option value="art">Art</option>
                 <option value="cooking">Cooking & Health</option>
@@ -96,8 +96,6 @@ session_start();
         $camps = $dao->getSearchedCamps($searchString);
         if($camps->fetchColumn()>0){
             foreach ($camps as $camp) {
-                $startDate = new DateTime($camp['start_date']);
-                $endDate = new DateTime($camp['end_date']);
                 echo "<h3><a href='{$camp['website']}' target='_blank'>{$camp['camp_name']}</a></h3>";
                 echo "<p><b>Date and Time: </b>{$camp['start_date']} to {$camp['end_date']}</p>";
                 echo "<p>{$camp['description']}</p>";

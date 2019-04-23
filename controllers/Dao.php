@@ -35,7 +35,11 @@ class Dao {
     //camp administration functions 
     public function getUserPassword ($username) {
         $conn = $this->getConnection();
-        return $conn->query("SELECT User.password From User WHERE User.email = '$username'");
+        $sth = $conn->prepare("SELECT User.password From User WHERE User.email = '$username'");
+        $sth->execute();
+        $result = $sth->fetch(PDO::FETCH_OBJ);
+
+        return $result->password;
     }
     
     public function getSessionsforAdmin ($username) {    

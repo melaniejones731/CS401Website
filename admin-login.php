@@ -9,7 +9,7 @@ include("Templates/header.php");
 
 // login.php
 session_start();
-echo $_SESSION["hash"];
+
 
   if (isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]) {
     header("Location:camp-management.php");

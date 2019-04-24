@@ -23,8 +23,14 @@ $dao = new Dao();
 $camps = $dao->getSessionsForAdmin($_SESSION["email_preset"]);
 
 foreach ($camps as $camp) {
+  $startymd = $camp->start_date;
+  $timestamp = strtotime($startymd);
+  $startmdy = date("m-d-Y", $timestamp);
+  $endymd = $camp->end_date;
+  $timestamp = strtotime($endymd);
+  $endmdy = date("m-d-Y", $timestamp);
   echo "<h3>{$camp->camp_name}</h3>";
-  echo "<p>Date and Time: {$camp->start_date} to {$camp->end_date}</p>";
+  echo "<p>Date and Time: {$startmdy} to {$endmdy}</p>";
   echo "<p>{$camp->description}</p>";
   echo "<p>For Debugging/Verification Active Status: {$camp->isActive}</p>";
   echo "<p>For Debugging/Verification Session ID: {$camp->session_id}</p>";
